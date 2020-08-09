@@ -1,4 +1,12 @@
+
+export interface listTasks{
+    id:number;
+    description:string;
+    sn_done:string;
+}
+
 export class ListTask {
-    _id: number;
+    id: number;
     description: string;
+    item:listTasks[];
   }

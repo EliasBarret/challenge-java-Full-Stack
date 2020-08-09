@@ -37,7 +37,7 @@ public class ListTaskController {
         return new ResponseEntity<>(iListTaskService.findById(id), HttpStatus.OK);
     }
     
-    @GetMapping("/")
+    @GetMapping("")
     public List<ListTask> findAll(){
     	return iListTaskService.findAll();
     }

@@ -7,7 +7,7 @@ import { ListTask } from 'src/model/listTask';
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
-const apiUrl = 'http://localhost:8080/listTask/';
+const apiUrl = 'http://localhost:8080/listTask';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +34,7 @@ export class ListTaskApiService {
   addListTask (listTask): Observable<ListTask> {
     return this.http.post<ListTask>(apiUrl, listTask, httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
-      tap((listTask: ListTask) => console.log(`adicionou o Task com w/ id=${listTask._id}`)),
+      tap((listTask: ListTask) => console.log(`adicionou o Task com w/ id=${listTask.id}`)),
       catchError(this.handleError<ListTask>('addTask'))
     );
   }
@@ -46,8 +46,8 @@ export class ListTaskApiService {
       catchError(this.handleError<any>('updateTask'))
     );
   }
-
-  deleteTask (id): Observable<Task> {
+*/
+ /* deleteTask (id): Observable<Task> {
     const url = `${apiUrl}/delete/${id}`;
 
     return this.http.delete<Task>(url, httpOptions).pipe(

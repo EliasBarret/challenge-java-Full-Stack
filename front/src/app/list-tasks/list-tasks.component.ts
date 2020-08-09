@@ -5,10 +5,10 @@ import {ListTask} from 'src/model/listTask'
 @Component({
   selector: 'app-list-tasks',
   templateUrl: './list-tasks.component.html',
-  styleUrls: ['./list-tasks.component.scss']
+  styleUrls: ['./list-tasks.component.scss'] 
 })
 export class ListTasksComponent implements OnInit {
-  displayedColumns: string[] = [ 'description'];
+  displayedColumns: string[] = ['id', 'description','acao'];
   dataSource: ListTask[];
   isLoadingResults = true;
   constructor(private _api: ListTaskApiService) { }

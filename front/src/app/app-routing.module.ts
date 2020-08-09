@@ -21,7 +21,7 @@ const routes: Routes = [
     data: { title: 'Cadastro de Lista' }
   },
   {
-    path: 'list-task-detail',
+    path: 'list-task-detail/:id',
     component: ListTaskDetailComponent,
     data: { title: 'Detalhe Lista' }
   },

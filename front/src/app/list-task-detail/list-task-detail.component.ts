@@ -9,13 +9,15 @@ import { ListTask } from 'src/model/listTask';
   styleUrls: ['./list-task-detail.component.scss']
 })
 export class ListTaskDetailComponent implements OnInit {
-  listTask: ListTask = { _id:null, description: ''};
+  listTask: ListTask = { id:null, description: '', item:null};
+ 
   isLoadingResults = true;
   constructor(private router: Router, private route: ActivatedRoute, private api: ListTaskApiService) { }
 
 
   ngOnInit(): void {
     this.getListTask(this.route.snapshot.params['id']);
+   
   }
 
   getListTask(id) {
@@ -27,9 +29,10 @@ export class ListTaskDetailComponent implements OnInit {
       });
   }
 
-  /*deleteProduto(id) {
+  
+ /* deleteTask(id) {
     this.isLoadingResults = true;
-    this.api.deleteProduto(id)
+    this.api.deleteTask(id)
       .subscribe(res => {
           this.isLoadingResults = false;
           this.router.navigate(['/produtos']);
@@ -39,5 +42,4 @@ export class ListTaskDetailComponent implements OnInit {
         }
       );
   }*/
-
 }
