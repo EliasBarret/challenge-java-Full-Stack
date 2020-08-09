@@ -6,8 +6,11 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -28,7 +31,9 @@ public class Task {
     @Column
     private String sn_done;
     
-    @OneToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="listTask")
+    @JsonIgnore
     private ListTask listTask;
 
 	public Long getId() {
@@ -46,7 +51,7 @@ public class Task {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
+	
 	public ListTask getListTask() {
 		return listTask;
 	}
@@ -62,7 +67,4 @@ public class Task {
 	public void setSn_done(String sn_done) {
 		this.sn_done = sn_done;
 	}
-    
-    
-    
 }

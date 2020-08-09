@@ -34,18 +34,6 @@ public class ListTaskService implements IListTaskService{
             throw new CustomException(Constants.LISTTASK_NOT_FOUND);
         }
 	}
-
-	@Override
-	public Response deleteById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public ListTask alter(ListTask listTask, Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	@Override
 	public List<ListTask> findAll() {
 		

@@ -42,16 +42,5 @@ public class ListTaskController {
     	return iListTaskService.findAll();
     }
     
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Response> delete(@PathVariable Long id){
-        return new ResponseEntity<>(iListTaskService.deleteById(id), HttpStatus.OK);
-    }
-
-    @PutMapping("/{id}")
-    public ResponseEntity<ListTask> alter(@RequestBody @Valid ListTaskDTO listTaskDTO, @PathVariable Long id){
-        ListTask listTask = new ModelMapper().map(listTaskDTO, ListTask.class);
-        return new ResponseEntity<>(iListTaskService.alter(listTask, id), HttpStatus.OK);
-    }
-    
 }
 

@@ -27,21 +27,9 @@ public interface IListTaskService {
 	ListTask findById(Long id);
 
 	/**
-	 * Method to delete a List Task by Id
+	 * Method to find a ListTask all
 	 * 
-	 * @param id
-	 * @return Response
+	 * @return
 	 */
-	Response deleteById(Long id);
-	
-	/**
-	 * Method to alter text by ListTask
-	 * 
-	 * @param listTask
-	 * @param id
-	 * @return listTask
-	 */
-	ListTask alter(ListTask listTask, Long id);
-	
 	List<ListTask> findAll();
 }

@@ -2,6 +2,7 @@ package br.com.elias.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,10 +12,14 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-@Table
+@Table(name="ListTask")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -26,7 +31,8 @@ public class ListTask {
     @Column
     private String description;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    
+    @OneToMany(mappedBy="listTask", fetch = FetchType.EAGER, cascade=CascadeType.ALL, orphanRemoval=true)
     private List<Task> listTasks;
 
 	public Long getId() {
@@ -36,7 +42,6 @@ public class ListTask {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public List<Task> getListTasks() {
 		return listTasks;
 	}

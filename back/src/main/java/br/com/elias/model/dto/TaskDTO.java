@@ -1,5 +1,6 @@
 package br.com.elias.model.dto;
 
+import br.com.elias.model.ListTask;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -12,8 +13,13 @@ public class TaskDTO {
 	
     private String sn_done;
     
-    private ListOfTaskDTO listTask;
+    private ListTask listTask;
+   // private ListOfTaskDTO listTask;
 
+    public TaskDTO() {
+    	
+    }
+    
 	public String getDescription() {
 		return description;
 	}
@@ -31,12 +37,21 @@ public class TaskDTO {
 		this.sn_done = sn_done;
 	}
 
-	public ListOfTaskDTO getListTask() {
+	public ListTask getListTask() {
+		return listTask;
+	}
+
+	public void setListTask(ListTask listTask) {
+		this.listTask = listTask;
+	}
+	
+	
+	/*public ListOfTaskDTO getListTask() {
 		return listTask;
 	}
 
 	public void setListTask(ListOfTaskDTO listTask) {
 		this.listTask = listTask;
-	}
+	}*/
     
 }

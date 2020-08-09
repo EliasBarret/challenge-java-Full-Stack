@@ -46,7 +46,7 @@ public class TaskService implements ITaskService{
 	public Task alter(Task task, Long id) {
 		 Optional<Task> tsk = iTaskRepository.findById(id);
 	        if(tsk.isPresent()){
-	        	tsk.get().setDescription(task.getDescription());
+	        	tsk.get().setSn_done(task.getSn_done());
 	            return iTaskRepository.save(tsk.get());
 	        }else{
 	            throw new CustomException(Constants.TASK_NOT_FOUND);

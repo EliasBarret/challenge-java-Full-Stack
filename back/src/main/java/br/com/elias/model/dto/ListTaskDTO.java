@@ -2,10 +2,6 @@ package br.com.elias.model.dto;
 
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-
 import br.com.elias.model.Task;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -16,25 +12,15 @@ import lombok.NoArgsConstructor;
 public class ListTaskDTO {
 
     private String description;
-
-    private String sn_done;	
 	
 	private List<Task> listTasks;
-
+	
 	public List<Task> getListTasks() {
 		return listTasks;
 	}
 
 	public void setListTasks(List<Task> listTasks) {
 		this.listTasks = listTasks;
-	}
-
-	public String getSn_done() {
-		return sn_done;
-	}
-
-	public void setSn_done(String sn_done) {
-		this.sn_done = sn_done;
 	}
 
 	public String getDescription() {
