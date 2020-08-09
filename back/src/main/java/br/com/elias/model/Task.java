@@ -25,6 +25,9 @@ public class Task {
     @Column(name = "name", length = 100, nullable = false)
 	private String description;
     
+    @Column
+    private String sn_done;
+    
     @OneToOne(fetch = FetchType.EAGER)
     private ListTask listTask;
 
@@ -50,6 +53,14 @@ public class Task {
 
 	public void setListTask(ListTask listTask) {
 		this.listTask = listTask;
+	}
+
+	public String getSn_done() {
+		return sn_done;
+	}
+
+	public void setSn_done(String sn_done) {
+		this.sn_done = sn_done;
 	}
     
     

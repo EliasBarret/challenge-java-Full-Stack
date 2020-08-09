@@ -1,6 +1,9 @@
 package br.com.elias.service;
 
 
+
+import java.util.List;
+
 import br.com.elias.model.ListTask;
 import br.com.elias.util.Response;
 
@@ -39,4 +42,6 @@ public interface IListTaskService {
 	 * @return listTask
 	 */
 	ListTask alter(ListTask listTask, Long id);
+	
+	List<ListTask> findAll();
 }

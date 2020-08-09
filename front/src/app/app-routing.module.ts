@@ -4,9 +4,27 @@ import { TasksComponent } from './tasks/tasks.component';
 import { TaskDetailComponent } from './task-detail/task-detail.component';
 import { TaskNewComponent } from './task-new/task-new.component';
 import { TaskEditComponent } from './task-edit/task-edit.component';
+import { ListTasksComponent } from './list-tasks/list-tasks.component';
+import { ListTaskNewComponent } from './list-task-new/list-task-new.component';
+import { ListTaskDetailComponent } from './list-task-detail/list-task-detail.component'
 
 
 const routes: Routes = [
+  {
+    path: 'list-task',
+    component: ListTasksComponent,
+    data: { title: 'Lista de Tarefas' }
+  },
+  {
+    path: 'list-task-new',
+    component: ListTaskNewComponent,
+    data: { title: 'Cadastro de Lista' }
+  },
+  {
+    path: 'list-task-detail',
+    component: ListTaskDetailComponent,
+    data: { title: 'Detalhe Lista' }
+  },
   {
     path: 'task',
     component: TasksComponent,
@@ -28,7 +46,7 @@ const routes: Routes = [
     data: { title: 'Editar o Tarefa' }
   },
   { path: '',
-    redirectTo: '/tasks',
+    redirectTo: '/list-task',
     pathMatch: 'full'
   }
 ];

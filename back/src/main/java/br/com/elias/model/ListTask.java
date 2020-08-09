@@ -26,9 +26,6 @@ public class ListTask {
     @Column
     private String description;
     
-    @Column
-    private String sn_done;
-    
     @OneToMany(fetch = FetchType.EAGER)
     private List<Task> listTasks;
 
@@ -46,13 +43,6 @@ public class ListTask {
 
 	public void setListTasks(List<Task> listTasks) {
 		this.listTasks = listTasks;
-	}
-	public String getSn_done() {
-		return sn_done;
-	}
-
-	public void setSn_done(String sn_done) {
-		this.sn_done = sn_done;
 	}
 
 	public String getDescription() {

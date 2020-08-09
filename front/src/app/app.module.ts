@@ -22,6 +22,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
+import { ListTasksComponent } from './list-tasks/list-tasks.component';
+import { ListTaskNewComponent } from './list-task-new/list-task-new.component';
+import { ListTaskDetailComponent } from './list-task-detail/list-task-detail.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,10 @@ import { LayoutModule } from '@angular/cdk/layout';
     TaskDetailComponent,
     TaskNewComponent,
     TaskEditComponent,
-    MenuComponent
+    MenuComponent,
+    ListTasksComponent,
+    ListTaskNewComponent,
+    ListTaskDetailComponent
   ],
   imports: [
     BrowserModule,

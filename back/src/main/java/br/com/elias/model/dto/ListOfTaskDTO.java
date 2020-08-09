@@ -14,10 +14,8 @@ public class ListOfTaskDTO {
     
     private String description;
     
-    private String sn_done;
     
-    private List<Task> listTasks;
-
+    
 	public Long getId() {
 		return id;
 	}
@@ -34,19 +32,4 @@ public class ListOfTaskDTO {
 		this.description = description;
 	}
 
-	public String getSn_done() {
-		return sn_done;
-	}
-
-	public void setSn_done(String sn_done) {
-		this.sn_done = sn_done;
-	}
-
-	public List<Task> getListTasks() {
-		return listTasks;
-	}
-
-	public void setListTasks(List<Task> listTasks) {
-		this.listTasks = listTasks;
-	}
 }

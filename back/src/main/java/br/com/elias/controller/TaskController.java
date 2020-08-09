@@ -17,6 +17,7 @@ import br.com.elias.util.Response;
 import javax.validation.Valid;
 import java.net.URI;
 
+@CrossOrigin(origins= "http://localhost:4200")
 @RestController
 @RequestMapping("/task")
 public class TaskController {

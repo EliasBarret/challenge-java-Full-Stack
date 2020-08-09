@@ -1,5 +1,6 @@
 package br.com.elias.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +45,11 @@ public class ListTaskService implements IListTaskService{
 	public ListTask alter(ListTask listTask, Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public List<ListTask> findAll() {
+		
+		return iListTaskRepository.findAll();
 	}
 	
 	

@@ -1,6 +1,8 @@
 package br.com.elias.controller;
 
 import java.net.URI;
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.modelmapper.ModelMapper;
@@ -15,6 +17,7 @@ import br.com.elias.model.dto.ListTaskDTO;
 import br.com.elias.service.IListTaskService;
 import br.com.elias.util.Response;
 
+@CrossOrigin(origins= "http://localhost:4200")
 @RestController
 @RequestMapping("/listTask")
 public class ListTaskController {
@@ -34,6 +37,11 @@ public class ListTaskController {
         return new ResponseEntity<>(iListTaskService.findById(id), HttpStatus.OK);
     }
     
+    @GetMapping("/")
+    public List<ListTask> findAll(){
+    	return iListTaskService.findAll();
+    }
+    
     @DeleteMapping("/{id}")
     public ResponseEntity<Response> delete(@PathVariable Long id){
         return new ResponseEntity<>(iListTaskService.deleteById(id), HttpStatus.OK);
@@ -44,5 +52,6 @@ public class ListTaskController {
         ListTask listTask = new ModelMapper().map(listTaskDTO, ListTask.class);
         return new ResponseEntity<>(iListTaskService.alter(listTask, id), HttpStatus.OK);
     }
+    
 }
 

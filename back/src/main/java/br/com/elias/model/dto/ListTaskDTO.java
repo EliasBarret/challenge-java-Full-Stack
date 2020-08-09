@@ -14,10 +14,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ListTaskDTO {
-    @Column
+
     private String description;
-    
-    @Column
+
     private String sn_done;	
 	
 	private List<Task> listTasks;

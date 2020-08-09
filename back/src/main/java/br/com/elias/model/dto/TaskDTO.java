@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 public class TaskDTO {
     
 	private String description;
+	
+    private String sn_done;
     
-    private ListOfTaskDTO list;
+    private ListOfTaskDTO listTask;
 
 	public String getDescription() {
 		return description;
@@ -20,12 +22,21 @@ public class TaskDTO {
 		this.description = description;
 	}
 
-	public ListOfTaskDTO getList() {
-		return list;
+
+	public String getSn_done() {
+		return sn_done;
 	}
 
-	public void setList(ListOfTaskDTO list) {
-		this.list = list;
+	public void setSn_done(String sn_done) {
+		this.sn_done = sn_done;
+	}
+
+	public ListOfTaskDTO getListTask() {
+		return listTask;
+	}
+
+	public void setListTask(ListOfTaskDTO listTask) {
+		this.listTask = listTask;
 	}
     
 }
