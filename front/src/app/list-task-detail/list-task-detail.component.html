@@ -21,10 +21,12 @@
 
             <dd>{{listTask.item}}</dd>
         </dl>
-        <div ng-repeat="listTask in listTask.item">
-          <dd>{{listTask.item}}</dd>
-        </div>
-            
+        
+        
+          <div ng-repeat="test in listTask.item.listTasks">
+            <dd>teste22{{listTask.item}}</dd>
+          </div>
+ 
        
       </mat-card-content>
       <mat-card-actions>

@@ -23,7 +23,7 @@ export class ListTaskNewComponent implements OnInit {
     this.isLoadingResults = true;
     this.api.addListTask(form)
       .subscribe(res => {
-          const id = res['_id'];
+          const id = res['id'];
           this.isLoadingResults = false;
           this.router.navigate(['/list-task']);
         }, (err) => {

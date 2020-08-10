@@ -10,14 +10,13 @@ import { ListTask } from 'src/model/listTask';
 })
 export class ListTaskDetailComponent implements OnInit {
   listTask: ListTask = { id:null, description: '', item:null};
- 
+  
   isLoadingResults = true;
   constructor(private router: Router, private route: ActivatedRoute, private api: ListTaskApiService) { }
 
 
   ngOnInit(): void {
     this.getListTask(this.route.snapshot.params['id']);
-   
   }
 
   getListTask(id) {
@@ -27,9 +26,12 @@ export class ListTaskDetailComponent implements OnInit {
         console.log(this.listTask);
         this.isLoadingResults = false;
       });
-  }
 
+      
+  }
   
+  
+
  /* deleteTask(id) {
     this.isLoadingResults = true;
     this.api.deleteTask(id)
