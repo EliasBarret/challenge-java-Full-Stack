@@ -8,5 +8,5 @@ export interface listTasks{
 export class ListTask {
     id: number;
     description: string;
-    item:listTasks[];
+    listTasks:listTasks[];
   }

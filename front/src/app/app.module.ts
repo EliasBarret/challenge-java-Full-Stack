@@ -26,6 +26,8 @@ import { ListTasksComponent } from './list-tasks/list-tasks.component';
 import { ListTaskNewComponent } from './list-task-new/list-task-new.component';
 import { ListTaskDetailComponent } from './list-task-detail/list-task-detail.component';
 
+import { CommonModule } from "@angular/common";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import { ListTaskDetailComponent } from './list-task-detail/list-task-detail.com
     MatSidenavModule,  
     MatTableModule,
     MatToolbarModule,
-    LayoutModule
+    LayoutModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

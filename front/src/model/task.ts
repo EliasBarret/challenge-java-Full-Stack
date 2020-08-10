@@ -3,7 +3,7 @@ export interface listTasks{
 }
 
 export class Task {
-    _id: number;
+    id: number;
     description: string;
     sn_done: string;
     item:listTasks[];

@@ -3,7 +3,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { Task } from 'src/model/task';
-
+ 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
@@ -35,7 +35,7 @@ export class TaskApiService {
   addTask (task): Observable<Task> {
     return this.http.post<Task>(apiUrl, task, httpOptions).pipe(
       // tslint:disable-next-line:no-shadowed-variable
-      tap((task: Task) => console.log(`adicionou o Task com w/ id=${task._id}`)),
+      tap((task: Task) => console.log(`adicionou o Task com w/ id=${task.id}`)),
       catchError(this.handleError<Task>('addTask'))
     );
   }
@@ -48,8 +48,8 @@ export class TaskApiService {
     );
   }
 
-  deleteTask (id): Observable<Task> {
-    const url = `${apiUrl}/delete/${id}`;
+  deleteTask(id): Observable<Task> {
+    const url = `${apiUrl}/${id}`;
 
     return this.http.delete<Task>(url, httpOptions).pipe(
       tap(_ => console.log(`remove o Task com id=${id}`)),
